@@ -49,3 +49,148 @@ projects.forEach((project, index) => {
 
   projectList.appendChild(card);
 });
+
+
+function isInViewport(element) {
+  const rect = element.getBoundingClientRect();
+  return (
+    rect.top >= 0 &&
+    rect.left >= 0 &&
+    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+  );
+}
+
+function animateOnScroll() {
+  const elements = document.querySelectorAll('.fade-in, .slide-in-left, .bounce-in');
+  
+  elements.forEach(element => {
+    if (isInViewport(element)) {
+      element.classList.add('animate');
+    }
+  });
+}
+
+
+const observerOptions = {
+  threshold: 0.1,
+  rootMargin: '0px 0px -50px 0px'
+};
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      
+      entry.target.classList.add('animate');
+    } else {
+    
+      entry.target.classList.remove('animate');
+    }
+  });
+}, observerOptions);
+
+
+const buttons = document.querySelectorAll('button');
+
+buttons.forEach(button => {
+  button.addEventListener('mouseenter', () => {
+    button.style.transform = 'scale(1.05)';
+    button.style.transition = 'transform 0.2s ease';
+  });
+  
+  button.addEventListener('mouseleave', () => {
+    button.style.transform = 'scale(1)';
+  });
+  
+  button.addEventListener('click', () => {
+    button.style.transform = 'scale(0.95)';
+    setTimeout(() => {
+      button.style.transform = 'scale(1)';
+    }, 150);
+  });
+});
+
+
+window.addEventListener('load', () => {
+
+  const loadingScreen = document.getElementById('loading-screen');
+  if (loadingScreen) {
+    setTimeout(() => {
+      loadingScreen.classList.add('hide');
+    }, 500);
+  }
+  
+  
+  document.querySelectorAll('.fade-in, .slide-in-left, .bounce-in').forEach(el => {
+    observer.observe(el);
+  });
+  
+
+  animateOnScroll();
+});
+
+
+window.addEventListener('scroll', animateOnScroll);
+
+function isInViewport(element) {
+  const rect = element.getBoundingClientRect();
+  return (
+    rect.top >= 0 &&
+    rect.left >= 0 &&
+    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+  );
+}
+
+
+function animateOnScroll() {
+  const elements = document.querySelectorAll('.fade-in, .slide-in-left, .bounce-in');
+  
+  elements.forEach(element => {
+    if (isInViewport(element)) {
+      element.classList.add('animate');
+    }
+  });
+}
+
+function isInViewport(element) {
+  const rect = element.getBoundingClientRect();
+  return (
+    rect.top >= 0 &&
+    rect.left >= 0 &&
+    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+  );
+}
+
+
+function animateOnScroll() {
+  const elements = document.querySelectorAll('.fade-in, .slide-in-left, .bounce-in');
+  
+  elements.forEach(element => {
+    if (isInViewport(element)) {
+      element.classList.add('animate');
+    }
+  });
+}
+function isInViewport(element) {
+  const rect = element.getBoundingClientRect();
+  return (
+    rect.top >= 0 &&
+    rect.left >= 0 &&
+    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+  );
+}
+
+
+function animateOnScroll() {
+  const elements = document.querySelectorAll('.fade-in, .slide-in-left, .bounce-in');
+  
+  elements.forEach(element => {
+    if (isInViewport(element)) {
+      element.classList.add('animate');
+    }
+  });
+}
+
