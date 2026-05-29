@@ -109,7 +109,7 @@ nav a,
 .socials a {
   color: #aaa;
   text-decoration: none;
-  transition: 0.3s;
+  transition: 0.7s;
 }
 
 nav a:hover,
@@ -168,6 +168,7 @@ nav a:hover,
 }
 
 .preview-card img {
+  display: flex;
   width: auto;
   height: 100%;
   object-fit: cover;
