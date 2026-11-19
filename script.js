@@ -16,6 +16,14 @@ const projects = [
     link: "https://github.com/NazzXCihuyy/ISBN"
   },
   {
+    title: "TokoKu Web",
+    category: "Electronic E-Commerce",
+    description:
+      "A modern e-commerce website for a digital product store.",
+    image: "img/project4.jpeg",
+    link: "https://tokoku-sage.vercel.app/"
+  },
+  {
     title: "Prototype Porto",
     category: "Development & Strategy",
     description:
@@ -44,7 +52,7 @@ projects.forEach((project, index) => {
       ${project.description}
     </p>
 
-    <button class="secondary-btn" onclick="window.open('${project.link}','_blank')">View Case Study</button>
+    <button class="secondary-btn" onclick="window.open('${project.link}','_blank')">View Project</button>
   `;
 
   projectList.appendChild(card);
